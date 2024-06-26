@@ -15,3 +15,26 @@ body{
     background-color: #f1f1f1 !important;
 }
 
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    margin-right: 0.5em;
+    display: block;
+}
+/* only for FF */
+@-moz-document url-prefix() {
+    input[type="date"]:before {
+        content: attr(placeholder) !important;
+        margin-right: 0.5em;
+        display: block;
+        position: absolute;
+        left: 200px; /* please adopt */
+    }
+}
+
+.card {
+    border : none !important;
+}
+
+th{
+    text-wrap: nowrap;
+}

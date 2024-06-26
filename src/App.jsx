@@ -4,8 +4,6 @@ import Card from "./components/Card.jsx";
 import Commission from "./components/Commission.jsx";
 import SalesByCategory from "./components/SalesByCategory.jsx";
 import TopTen from "./components/TopTen.jsx";
-import DatePicker from "react-datepicker";
-import 'react-datepicker/dist/react-datepicker.css'
 
 function App() {
     const CardTitle = [
@@ -22,24 +20,12 @@ function App() {
     const num = ['ยอดขายตามกลุ่มคอมมิชชั่น', 'ยอดขายตามหมวดหมู่', '10 อันดับ'];
 
 
-    const renderMonthContent = (month, shortMonth, longMonth, day) => {
-        const fullYear = new Date(day).getFullYear();
-        const tooltipText = `Tooltip for month: ${longMonth} ${fullYear}`;
-        return <span title={tooltipText}>{shortMonth}</span>;
-    };
-
-
     return (
         <>
             <Content>
                 <div className="d-flex justify-content-center align-items-center mb-3">
                     <div className="text-center d-flex">
-                        <DatePicker className={'form-control me-3'}
-                            selected={new Date()}
-                            renderMonthContent={renderMonthContent}
-                            showMonthYearPicker
-                            dateFormat="MM/yyyy"
-                         />
+                        <input type="month" className={'form-control me-2'} placeholder={'select month'}/>
                         <button className="btn btn-orange bg-orange text-light">ค้นหา</button>
                     </div>
                 </div>
@@ -59,33 +45,40 @@ function App() {
                         <h4>ยอดขายแจกแจงรายวัน</h4>
                     </div>
                     <div className={'col-12'}>
-                        <table className={'table'}>
-                            <thead>
-                            <tr style={{backgroundColor: "red"}}>
-                                <th>ปี</th>
-                                <th>ยอดยวมสุทธิ</th>
-                                {headers.map(number => (
-                                    <th key={number}>{number}</th>
-                                ))}
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>2024</td>
-                                <td>300000</td>
-                                {headers.map(number => (
-                                    <td key={number}>{Math.floor(Math.random() * 1000)}</td>
-                                ))}
-                            </tr>
-                            <tr>
-                                <td>2023</td>
-                                <td>300000</td>
-                                {headers.map(number => (
-                                    <td key={number}>{Math.floor(Math.random() * 1000)}</td>
-                                ))}
-                            </tr>
-                            </tbody>
-                        </table>
+
+                        <div className={'card'}>
+                            <div className={'card-body'}>
+                                <div className={'table-responsive'}>
+                                    <table className={'table'}>
+                                        <thead>
+                                        <tr style={{backgroundColor: "red"}}>
+                                            <th>ปี</th>
+                                            <th>ยอดยวมสุทธิ</th>
+                                            {headers.map(number => (
+                                                <th key={number}>{number}</th>
+                                            ))}
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>2024</td>
+                                            <td>300000</td>
+                                            {headers.map(number => (
+                                                <td key={number}>{Math.floor(Math.random() * 1000)}</td>
+                                            ))}
+                                        </tr>
+                                        <tr>
+                                            <td>2023</td>
+                                            <td>300000</td>
+                                            {headers.map(number => (
+                                                <td key={number}>{Math.floor(Math.random() * 1000)}</td>
+                                            ))}
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className={'row mt-3'}>

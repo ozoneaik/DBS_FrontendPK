@@ -1,17 +1,15 @@
 import Navbar from "./Navbar.jsx";
-import {Outlet} from "react-router-dom";
-
-const Content = () => {
+const Content = ({children}) => {
     return (
         <>
             <Navbar/>
-            <div className={'container-fluid mt-3'}>
+            <main className={'container-fluid'} style={{marginTop: 70}}>
                 <div className={'row'}>
                     <div className={'col-12'}>
-                        <Outlet/>
+                        {children}
                     </div>
                 </div>
-            </div>
+            </main>
         </>
     );
 };

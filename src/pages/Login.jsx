@@ -19,11 +19,12 @@ function Login() {
                                     <input type="password" className="form-control" id="InputPassword1"
                                            placeholder="กรอกรหัสผ่าน"/>
                                 </div>
-                                <button type="submit" className="btn btn-primary w-100 btn-block">เข้าสู่ระบบ</button>
+                                {/*<button type="submit" className="btn btn-primary w-100 btn-block">เข้าสู่ระบบ</button>*/}
+                                <Link className={'btn btn-primary w-100'} to="/dashboard">เข้าสู่ระบบ</Link>
                                 <div className="form-footer">
                                     <p className={'m-0'}>
                                         <span>Don&apos;t Have an account?</span>
-                                        <Link to="/main">Sign Up</Link>
+                                        <Link to="/dashboard">Sign Up</Link>
                                     </p>
                                 </div>
                             </form>

@@ -35,6 +35,18 @@ input[type="date"]:before {
     border : none !important;
 }
 
-th{
+th ,td{
+    text-align: center !important;
     text-wrap: nowrap;
+    align-content: center;
 }
+
+th{
+    background-color: #fef3f2 !important;
+}
+
+tr{
+    height: 60px;
+}
+
+

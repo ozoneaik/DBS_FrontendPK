@@ -1,0 +1,8 @@
+.p-datatable-header div{
+    display : flex;
+    justify-content: space-between;
+}
+
+.p-datatable-header{
+    background-color : #ef4a3d;
+}

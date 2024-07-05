@@ -49,4 +49,8 @@ tr{
     height: 60px;
 }
 
+.active{
+    color : #ef4a3d !important;
+}
+
 

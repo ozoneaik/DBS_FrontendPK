@@ -3,7 +3,7 @@ const Content = ({children}) => {
     return (
         <>
             <Navbar/>
-            <main className={'container-fluid'} style={{marginTop: 70}}>
+            <main className={'container-fluid'} style={{marginTop: 80}}>
                 <div className={'row'}>
                     <div className={'col-12'}>
                         {children}

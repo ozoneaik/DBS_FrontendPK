@@ -34,7 +34,7 @@ const Navbar = () => {
                                 <Link to={'/ar'} className={`nav-link`} aria-current="page">AR</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={'/summary-point'} className={`nav-link`} aria-current="page">POINT</Link>
+                                <Link to={'/point'} className={`nav-link`} aria-current="page">POINT</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to={'/summary-point'} className={`nav-link`} aria-current="page">RP</Link>

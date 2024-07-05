@@ -7,6 +7,7 @@ import Services from "./pages/Services.jsx";
 import Approve from "./pages/Approve.jsx";
 import Recommend from "./pages/Recommend.jsx";
 import Ar from "./pages/Ar.jsx";
+import Point from "./pages/Point.jsx";
 
 export const route = createBrowserRouter([
     {path: '/', element: <Login/>},
@@ -16,6 +17,7 @@ export const route = createBrowserRouter([
     {path : '/approve', element: <Approve/>},
     {path : '/recommend', element: <Recommend/>},
     {path : '/ar', element: <Ar/>},
+    {path : '/point', element: <Point/>},
     {path: '/login', element: <Login/>},
     {path: '*', element: <Test/>},
 ]);

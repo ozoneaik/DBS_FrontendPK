@@ -41,9 +41,9 @@ th ,td{
     align-content: center;
 }
 
-th{
-    background-color: #fef3f2 !important;
-}
+/*th{*/
+/*    background-color: #fef3f2 !important;*/
+/*}*/
 
 tr{
     height: 60px;

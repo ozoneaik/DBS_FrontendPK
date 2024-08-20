@@ -37,10 +37,13 @@ const Navbar = () => {
                                 <Link to={'/point'} className={`nav-link`} aria-current="page">POINT</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={'/summary-point'} className={`nav-link`} aria-current="page">RP</Link>
+                                <Link to={'/rp'} className={`nav-link`} aria-current="page">RP</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to={'/summary-point'} className={`nav-link`} aria-current="page">RT</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to={'/test-chart'} className={`nav-link`} aria-current="page">Test Chart</Link>
                             </li>
                         </ul>
                         <form className="d-flex">

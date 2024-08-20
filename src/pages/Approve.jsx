@@ -1,22 +1,26 @@
 import Content from "../layouts/Content.jsx";
-import "flatpickr/dist/themes/material_green.css";
+import "flatpickr/dist/themes/material_blue.css";
 import Flatpickr from "react-flatpickr";
 import {useState} from "react";
 import ApproveNowComponent from "../components/Approve/ApproveNowComponent.jsx";
 import ApprovePendingComponent from "../components/Approve/ApprovePendingComponent.jsx";
 
 function Approve() {
-    const [dateRange, setDateRange] = useState([null, null]);
+    const [dateRange, setDateRange] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearchTermChange = (e) => {
         setSearchTerm(e.target.value);
     };
-    const handleDateRangeChange = (selectedDates) => {
-        setDateRange(selectedDates);
+    const handleDateRangeChange = (selectedDates,dateStr) => {
+        console.log(dateStr)
+        setDateRange(dateStr);
     };
     return (
         <Content>
+            {
+                dateRange
+            }
             <div className={'card'}>
                 <div className={'card-body'}>
                     <div className={'row'}>

@@ -1,49 +1,66 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import {Doughnut} from 'react-chartjs-2';
+import {ArcElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Tooltip} from 'chart.js';
+import {useEffect, useState} from "react";
+import Content from "../layouts/Content.jsx";
 
-function Test(props) {
+ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale);
+
+// ฟังก์ชันเพื่อสร้างข้อมูลจำลองจำนวนมาก
+const generateLargeDataSet = (size) => {
+    const data = [];
+    for (let i = 0; i < size; i++) {
+        data.push({
+            id: i + 1,
+            year: 2000 + i,
+            userGain: Math.floor(Math.random() * 100000), // สร้างค่าผู้ใช้ที่เพิ่มขึ้นแบบสุ่ม
+            userLost: Math.floor(Math.random() * 10000)  // สร้างค่าผู้ใช้ที่สูญเสียแบบสุ่ม
+        });
+    }
+    return data;
+};
+
+function Test() {
+    const [chartData, setChartData] = useState({
+        labels: [],
+        datasets: [
+            {
+                label: "Users Gained",
+                data: [],
+                backgroundColor: "rgba(75,192,192,1)",
+            }
+        ]
+    });
+
+    useEffect(() => {
+        const largeDataSet = generateLargeDataSet(4);
+        setChartData({
+            labels: largeDataSet.map((data) => data.year.toString()),
+            datasets: [
+                {
+                    label: "Users Gained",
+                    data: largeDataSet.map((data) => data.userGain),
+                    backgroundColor: "rgba(75,192,192,1)",
+                }
+            ]
+        });
+    }, []);
+
     return (
-        <>
-            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Fixed navbar</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarCollapse">
-                        <ul className="navbar-nav me-auto mb-2 mb-md-0">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Link</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link disabled" href="#" tabindex="-1"
-                                   aria-disabled="true">Disabled</a>
-                            </li>
-                        </ul>
-                        <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="SearchComponent" aria-label="SearchComponent"/>
-                                <button className="btn btn-outline-success" type="submit">SearchComponent</button>
-                        </form>
+        <Content>
+            <div className={'card'}>
+                <div className={'card-body'}>
+                    <div className={'row'}>
+                        <div className={'col-md-6 col-sm-12'}>
+                            <Doughnut data={chartData}/>
+                        </div>
+                        <div className={'col-md-6 col-sm-12'}>
+                            <Doughnut data={chartData}/>
+                        </div>
                     </div>
                 </div>
-            </nav>
-
-            <main className="container">
-                <div className="bg-light p-5 rounded">
-                    <h1>Navbar example</h1>
-                    <p className="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As
-                        you scroll, it will remain fixed to the top of your browser’s viewport.</p>
-                    <Link to={'/dashboard'} className="btn btn-lg btn-primary" role="button">View navbar
-                        docs »</Link>
-                </div>
-            </main>
-        </>
-);
+            </div>
+        </Content>
+    );
 }
 
 export default Test;

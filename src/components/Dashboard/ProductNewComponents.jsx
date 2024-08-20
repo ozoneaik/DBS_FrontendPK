@@ -21,36 +21,36 @@ export const ProductNewComponents = (props) => {
                     <th colSpan={2}>ธันวาคม</th>
                 </tr>
                 <tr>
-                    <th className={'border border-end-1'}>ปี</th>
+                    <th className={''}>ปี</th>
                     {
                         data.map((item, index) => (
-                            <th key={index} className={index % 2 !== 0 ? 'border-end': ''}>{index % 2 === 0 ? '2023' : '2024'}</th>
+                            <th key={index} className={''}>{index % 2 === 0 ? '2023' : '2024'}</th>
                         ))
                     }
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td className={'border border-end-1'}>ยอดขายรวม</td>
+                    <td className={''}>ยอดขายรวม</td>
                     {
                         data.map((item, index) => (
-                            <td className={index %2 !== 0 ? 'border-end': ''} key={index}>{Math.floor(Math.random() * (2000000 - 100 + 1)) + 100}{index}</td>
+                            <td className={''} key={index}>{Math.floor(Math.random() * (2000000 - 100 + 1)) + 100}{index}</td>
                         ))
                     }
                 </tr>
                 <tr>
-                    <td className={'border border-end-1'}>สินค้าใหม่</td>
+                    <td className={''}>สินค้าใหม่</td>
                     {
                         data.map((item, index) => (
-                            <td className={index %2 !== 0 ? 'border-end': ''} key={index}>{Math.floor(Math.random() * (2000000 - 100 + 1)) + 100}</td>
+                            <td className={''} key={index}>{Math.floor(Math.random() * (2000000 - 100 + 1)) + 100}</td>
                         ))
                     }
                 </tr>
                 <tr>
-                    <td className={'border border-end-1'}>คิดเป็น%</td>
+                    <td className={''}>คิดเป็น%</td>
                     {
                         data.map((item, index) => (
-                            <td className={index %2 !== 0 ? 'border-end': ''} key={index}>{Math.floor(Math.random() * (2000000 - 100 + 1)) + 100}</td>
+                            <td className={''} key={index}>{Math.floor(Math.random() * (2000000 - 100 + 1)) + 100}</td>
                         ))
                     }
                 </tr>

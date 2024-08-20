@@ -8,12 +8,12 @@ import {MoreComponent} from "../components/Dashboard/MoreComponent.jsx";
 export default function Dashboard() {
     const CardTitle = [
         {title: 'ยอดขายรวมสุทธิ', color: 'orange', icon: 'fa-coins'},
-        {title: 'เป้าหมาย (ขั้นต่ำ)', color: 'orange', icon: 'fa-chart-line'},
-        {title: 'เป้าหมาย (ล่าง)', color: 'orange', icon: 'fa-circle-arrow-down'},
-        {title: 'เป้าหมาย (บน)', color: 'orange', icon: 'fa-circle-arrow-up'},
-        {title: 'เป้าหมาย (G6)', color: 'orange', icon: 'fa-g'},
-        {title: 'จำนวนร้านค้า', color: 'orange', icon: 'fa-shop'},
-        {title: 'ยอดขายเฉลี่ย/วัน', color: 'orange', icon: 'fa-dollar-sign'},
+        {title: 'เป้าหมาย (ขั้นต่ำ)', color: 'primary', icon: 'fa-chart-line'},
+        {title: 'เป้าหมาย (ล่าง)', color: 'info', icon: 'fa-circle-arrow-down'},
+        {title: 'เป้าหมาย (บน)', color: 'warning', icon: 'fa-circle-arrow-up'},
+        {title: 'เป้าหมาย (G6)', color: 'danger', icon: 'fa-g'},
+        {title: 'จำนวนร้านค้า', color: 'secondary', icon: 'fa-shop'},
+        {title: 'ยอดขายเฉลี่ย/วัน', color: 'success', icon: 'fa-dollar-sign'},
         {title: 'จำนวน SKU', color: 'orange', icon: 'fa-basket-shopping'},
     ];
     const headers = Array.from({length: 31}, (_, i) => i + 1);
